@@ -20,7 +20,7 @@ function load_content(){
         // ✂️ tomar 20 (o menos si no hay suficientes)
         const limit = Math.min(20, preguntas.length);
         preguntas = preguntas.slice(0, limit);
-
+        total = limit
 
         quizdata = {
             titulo: "Quiz de Ciencias",
