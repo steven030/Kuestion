@@ -105,7 +105,7 @@ window.nextQuestion = function (){
     console.log(quizdata.preguntas.length,currentIndex, total)
     let passed = false;
     
-    if(currentIndex  == total - 1){
+    if(currentIndex  >= total){
 
         if (point == total) {
                 document.getElementById("question").innerHTML =
