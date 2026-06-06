@@ -2,7 +2,7 @@
 let point = 0;
 let quizdata = null;
 let currentIndex = 0; // 👈 FALTABA ESTO
-let total = 0;
+let total = 20;
 
 function crear_contenido(){
     console.log("pagina cargada");
@@ -15,14 +15,13 @@ function load_content(){
         .then(res => res.json())
         .then(data => {
 
-            
+        
         // 🔀 mezclar preguntas del JSON externo
         let preguntas = data.preguntas.sort(() => Math.random() - 0.5);
         // ✂️ tomar 20 (o menos si no hay suficientes)
         const limit = Math.min(20, preguntas.length);
         preguntas = preguntas.slice(0, limit);
-        total = limit
-
+  
         quizdata = {
             titulo: "Quiz de Ciencias",
             preguntas: preguntas.map((item, index) => ({
