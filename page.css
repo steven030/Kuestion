@@ -1,0 +1,142 @@
+body{
+    padding: 0;
+    margin: 0;
+
+}
+ul{
+    list-style: none;
+}
+
+header{
+    margin-bottom: 10px;
+}
+footer{
+    text-align: center;
+    margin-top: 10px;
+}
+
+#form-container{
+
+    min-height: calc(100vh - 120px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(231, 231, 231);
+}
+
+#cont_form{
+    min-height: 500px;
+    width:  500px;
+
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 24px rgb(112, 88, 190,0.4);
+    overflow: auto;
+}
+
+#q-container{
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+}
+
+#r-container{
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+
+}
+#next-container{
+    text-align: center;
+    padding: 5px;
+    margin: 5px;
+}
+.option{
+    width: 100%;
+    height: 60px;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 2px rgba(147, 180, 237, 0.4);
+}
+
+/* hover normal */
+.option:hover {
+    background-color: #f0f0f0;
+}
+
+/* correcta */
+.correcta {
+    background-color: #4CAF50 !important;
+    color: white;
+}
+
+/* incorrecta */
+.incorrecta {
+    background-color: #fec7c4 !important;
+    color: white;
+}
+/* desactivado */
+.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.title {
+    color: #4CAF50;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.title-f {
+    color: #af4c4c;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.result {
+    background: linear-gradient(135deg, #4CAF50, #81C784);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    animation: pop 0.4s ease;
+}
+.result-bad {
+    background: linear-gradient(135deg, #af4c4c, #c78181);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    animation: pop 0.4s ease;
+}
+
+.result h2 {
+    font-size: 28px;
+    margin: 0;
+}
+
+@keyframes pop {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
