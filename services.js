@@ -15,6 +15,7 @@ function load_content(){
         .then(res => res.json())
         .then(data => {
 
+            
         // 🔀 mezclar preguntas del JSON externo
         let preguntas = data.preguntas.sort(() => Math.random() - 0.5);
         // ✂️ tomar 20 (o menos si no hay suficientes)
