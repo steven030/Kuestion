@@ -102,7 +102,7 @@ function send_response(resp) {
 }
 window.nextQuestion = function (){
 
-    console.log(quizdata.preguntas.length,currentIndex)
+    console.log(quizdata.preguntas.length,currentIndex, total)
     let passed = false;
     
     if(currentIndex  == total - 1){
