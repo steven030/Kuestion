@@ -7,8 +7,29 @@ ul{
     list-style: none;
 }
 
-header{
-    margin-bottom: 10px;
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Apila Título y Barra verticalmente */
+    align-items: center;    /* Centra ambos horizontalmente */
+    margin-bottom: 20px;
+}
+
+
+.logo-title {
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5rem;
+    color: #6c5ce7; /* El color morado de tu tema */
+    margin: 20px 0;
+    letter-spacing: 2px; /* Un toque profesional */
+}
+
+/* Para centrarlo en móviles */
+@media (max-width: 600px) {
+    .logo-title {
+        text-align: center;
+    }
 }
 footer{
     text-align: center;
@@ -17,7 +38,7 @@ footer{
 
 #form-container{
 
-    min-height: calc(100vh - 120px);
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,24 +49,32 @@ footer{
 
 #cont_form{
     min-height: 500px;
-    width:  500px;
+    width:  90%;
 
     border-radius: 10px;
     background-color: white;
     box-shadow: 0 4px 24px rgb(112, 88, 190,0.4);
+
     overflow: auto;
+
+    /* 🔥 LA CLAVE PARA CENTRAR TODO */
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: center;    /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente dentro de la caja */
+    text-align: center;      /* Asegura que el texto también se centre */
 }
 
 #q-container{
     text-align: center;
-    padding: 20px;
-    margin: 20px;
+    padding: 10px;
+    margin: 10px;
 }
 
 #r-container{
     text-align: center;
-    padding: 20px;
-    margin: 20px;
+    padding: 10px;
+    margin: 10px;
 
 }
 #next-container{
@@ -53,32 +82,47 @@ footer{
     padding: 5px;
     margin: 5px;
 }
-.option{
+.option {
+    display: block;
     width: 100%;
-    height: 60px;
-    margin: 5px;
-    padding: 5px;
-    border-radius: 5px;
+    padding: 15px 20px;
+    margin: 10px 0;
+    border-radius: 10px; /* Mantenemos la forma de cápsula */
     background-color: white;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 2px rgba(147, 180, 237, 0.4);
+    
+    /* Recuperamos el borde y sombra original que te gustaba */
+    border: 1px solid #ddd; 
+    box-shadow: 0 4px 2px rgba(147, 180, 237, 0.4); 
+    
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
 }
 
-/* hover normal */
+/* Efecto al pasar el cursor (hover) */
 .option:hover {
     background-color: #f0f0f0;
+    /* Mantenemos la sombra activa para que el botón "flote" */
+    box-shadow: 0 6px 4px rgba(147, 180, 237, 0.5);
 }
 
-/* correcta */
+/* Estado de respuesta correcta */
 .correcta {
     background-color: #4CAF50 !important;
-    color: white;
+    border-color: #4CAF50 !important;
+    color: white !important;
+    box-shadow: none; /* Quitamos la sombra al acertar para que se vea "fijo" */
 }
 
-/* incorrecta */
+/* Estado de respuesta incorrecta */
 .incorrecta {
     background-color: #fec7c4 !important;
-    color: white;
+    border-color: #fec7c4 !important;
+    color: white !important;
+    box-shadow: none;
 }
 /* desactivado */
 .disabled {
@@ -138,5 +182,64 @@ footer{
     to {
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+/* Estilo para el contenedor del cronómetro */
+/* Contenedor del header donde va el timer */
+#timer-cont {
+    width: 90%;         /* Se adapta al ancho del contenedor */
+    max-width: 400px;   /* Máximo ancho permitido */
+    height: 15px;       /* Un poco más fino se ve más moderno */
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 15px auto;
+}
+
+/* La barra roja que disminuye */
+#timer-bar {
+    height: 100%;
+    width: 100%; /* Empieza al 100% */
+    background-color: #ff4757; /* Color rojo */
+    transition: width 0.5s linear; /* Animación suave al disminuir */
+    border-radius: 10px;
+}
+
+#start-btn {
+    background-color: #6c5ce7; /* Morado que combina con tu barra */
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px; /* Estilo cápsula */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transición suave al pasar el mouse */
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+}
+
+#start-btn:hover {
+    background-color: #5b4bc4; /* Un tono más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Efecto de levitación */
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.6);
+}
+
+#start-btn:active {
+    transform: translateY(0); /* Vuelve a su posición al hacer clic */
+}
+
+@media (max-width: 480px) {
+    .title, .title-f {
+        font-size: 24px; /* Títulos un poco más pequeños en móviles */
+    }
+    
+    #cont_form {
+        padding: 10px;
+        min-height: 80vh; /* Ajuste para que quepa bien en pantallas cortas */
+    }
+
+    .option {
+        font-size: 14px; /* Texto más legible en pantallas pequeñas */
     }
 }
