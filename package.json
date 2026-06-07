@@ -1,7 +1,6 @@
 {
   "name": "kuestion",
   "version": "1.0.0",
-  "description": "Mi proyecto de quiz",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
